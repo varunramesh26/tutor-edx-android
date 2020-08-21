@@ -1,5 +1,9 @@
-API_HOST_URL: 'http://10.0.2.2:8000' # localhost is 10.0.2.2 in Android
-ENVIRONMENT_DISPLAY_NAME: 'Localhost'
-PLATFORM_NAME: 'Your platform name here'
-PLATFORM_DESTINATION_NAME: 'example.com'
-FEEDBACK_EMAIL_ADDRESS: 'support@example.com'
+API_HOST_URL: 'https://online.vrook.co' # localhost is 10.0.2.2 in Android
+ENVIRONMENT_DISPLAY_NAME: 'Vrook'
+PLATFORM_NAME: 'Vrook Online'
+PLATFORM_DESTINATION_NAME: 'online.vrook.co'
+FEEDBACK_EMAIL_ADDRESS: 'info@vrook.co'
+
+YOUTUBE_PLAYER:
+  ENABLED: 'true'
+  API_KEY: 'AIzaSyBClilB96SUPu_SqTV5zySxRC8pdEzLATE'
