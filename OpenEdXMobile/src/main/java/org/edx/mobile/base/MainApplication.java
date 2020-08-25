@@ -86,6 +86,7 @@ public abstract class MainApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+
         init();
     }
 
@@ -95,6 +96,7 @@ public abstract class MainApplication extends MultiDexApplication {
      */
     private void init() {
         application = this;
+        FirebaseApp.initializeApp(application);
         // FIXME: Disable RoboBlender to avoid annotation processor issues for now, as we already have plans to move to some other DI framework. See LEARNER-1687.
         // ref: https://github.com/roboguice/roboguice/wiki/RoboBlender-wiki#disabling-roboblender
         // ref: https://developer.android.com/studio/build/gradle-plugin-3-0-0-migration
@@ -131,7 +133,7 @@ public abstract class MainApplication extends MultiDexApplication {
         if (config.getFirebaseConfig().isEnabled()) {
             // Firebase notification needs to initialize the FirebaseApp before
             // subscribe/unsubscribe to/from the topics
-            FirebaseApp.initializeApp(this);
+            //FirebaseApp.initializeApp(this);
             if (config.areFirebasePushNotificationsEnabled()) {
                 NotificationUtil.subscribeToTopics(config);
             } else if (!config.areFirebasePushNotificationsEnabled()) {
