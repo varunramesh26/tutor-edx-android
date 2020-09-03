@@ -11,8 +11,8 @@
 
         <ImageView
             android:id="@+id/edx_logo"
-            android:layout_width="136dp"
-            android:layout_height="135dp"
+            android:layout_width="273dp"
+            android:layout_height="279dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
             android:contentDescription="@string/phonetic_app_name"
@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/light_selectable_rounded_box_overlay"
+                android:background="@drawable/edx_brand_button"
                 android:focusable="true"
                 android:gravity="center"
                 android:text="@string/already_have_an_account"
