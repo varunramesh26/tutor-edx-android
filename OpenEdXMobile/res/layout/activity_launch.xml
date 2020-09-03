@@ -11,8 +11,8 @@
 
         <ImageView
             android:id="@+id/edx_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="136dp"
+            android:layout_height="135dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
             android:contentDescription="@string/phonetic_app_name"
@@ -23,10 +23,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="35dp"
             android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
             android:layout_marginTop="25dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="146dp"
             android:gravity="center"
             android:orientation="vertical">
 
