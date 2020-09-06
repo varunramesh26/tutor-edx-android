@@ -110,8 +110,8 @@ public class TextUtils {
         }
 
         final Map<String, CharSequence> keyValMap = new HashMap<>();
-        keyValMap.put("license", eulaSpan);
-        keyValMap.put("tos_and_honor_code", tosSpan);
+        //keyValMap.put("license", eulaSpan);
+        //keyValMap.put("tos_and_honor_code", tosSpan);
         keyValMap.put("platform_name", platformName);
         keyValMap.put("privacy_policy", privacyPolicySpan);
 
