@@ -495,7 +495,7 @@ android {
             }
             applicationVariants.all { variant ->
                 variant.outputs.all { output ->
-                    project.ext { appName = 'edx' }
+                    project.ext { appName = 'BNMIT' }
                     outputFileName  = "${project.ext.appName}-${variant.buildType.name}-${versionName}.apk"
                 }
             }
