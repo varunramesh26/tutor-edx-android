@@ -1,1 +1,20 @@
-[{"outputType":{"type":"APK"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":2022000,"versionName":"2.22.0","enabled":true,"outputFile":"edx-release-2.22.0.apk","fullName":"prodRelease","baseName":"prod-release"},"path":"edx-release-2.22.0.apk","properties":{}}]
+{
+  "version": 1,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "co.vrook.mobile",
+  "variantName": "prodRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "properties": [],
+      "versionCode": 2022000,
+      "versionName": "2022000",
+      "enabled": true,
+      "outputFile": "edx-release-2.22.0.apk"
+    }
+  ]
+}
