@@ -14,7 +14,8 @@ import org.edx.mobile.googlecast.GoogleCastDelegate;
 import org.edx.mobile.logger.Logger;
 
 import de.greenrobot.event.EventBus;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
+
 
 public abstract class BaseAppActivity extends RoboAppCompatActivity implements CastStateListener {
 
@@ -24,7 +25,7 @@ public abstract class BaseAppActivity extends RoboAppCompatActivity implements C
 
     @Override
     protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
     }
 
     @Override

@@ -59,8 +59,11 @@ import javax.inject.Inject;
 
 import de.greenrobot.event.EventBus;
 import io.branch.referral.Branch;
+import io.github.inflationx.calligraphy3.CalligraphyConfig;
+import io.github.inflationx.calligraphy3.CalligraphyInterceptor;
+import io.github.inflationx.viewpump.ViewPump;
 import roboguice.RoboGuice;
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+
 
 /**
  * This class initializes the modules of the app based on the configuration.
@@ -149,11 +152,11 @@ public abstract class MainApplication extends MultiDexApplication {
         // Register Font Awesome module in android-iconify library
         Iconify.with(new FontAwesomeModule());
 
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+        ViewPump.init(ViewPump.builder().addInterceptor(new CalligraphyInterceptor(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("fonts/OpenSans-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
-                .build()
-        );
+                .build()))
+        .build());
 
         // Init Branch
         if (config.getBranchConfig().isEnabled()) {

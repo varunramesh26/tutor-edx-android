@@ -20,8 +20,9 @@ import org.edx.mobile.discussion.DiscussionTextUtils;
 import org.edx.mobile.discussion.DiscussionThread;
 import org.edx.mobile.util.ResourceUtil;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyUtils;
-import uk.co.chrisjenx.calligraphy.TypefaceUtils;
+import io.github.inflationx.calligraphy3.CalligraphyUtils;
+import io.github.inflationx.calligraphy3.TypefaceUtils;
+
 
 public class DiscussionPostsAdapter extends BaseListAdapter<DiscussionThread> {
     @ColorInt

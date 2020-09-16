@@ -2,10 +2,10 @@ project.ext {
     APPLICATION_ID = "co.vrook.mobile"
     KOTLIN_VERSION = "1.3.41"
     GRADLE_PLUGIN_VERSION = "4.0.0"
-    BUILD_TOOLS_VERSION = "28.0.3"
+    BUILD_TOOLS_VERSION = "29.0.2"
     COMPILE_SDK_VERSION = 28
     // API Level that the application will target
-    TARGET_SDK_VERSION = 28
+    TARGET_SDK_VERSION = 29
     // Minimum API Level required for the application to run
     MIN_SDK_VERSION = 19
 

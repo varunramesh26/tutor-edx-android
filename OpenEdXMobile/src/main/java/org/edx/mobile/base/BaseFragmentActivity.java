@@ -38,8 +38,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.greenrobot.event.EventBus;
-import uk.co.chrisjenx.calligraphy.CalligraphyUtils;
-import uk.co.chrisjenx.calligraphy.TypefaceUtils;
+import io.github.inflationx.calligraphy3.CalligraphyUtils;
+import io.github.inflationx.calligraphy3.TypefaceUtils;
+
 
 public abstract class BaseFragmentActivity extends BaseAppActivity
         implements NetworkSubject, ICommonUI, OnActivityResultListener {
