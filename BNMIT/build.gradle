@@ -16,7 +16,7 @@ buildscript {
         classpath "com.newrelic.agent.android:agent-gradle-plugin:5.4.1"
         //Screenshot testing library
         //classpath 'com.facebook.testing.screenshot:plugin:0.11.0'
-        classpath 'com.google.gms:google-services:4.2.0'
+        classpath 'com.google.gms:google-services:4.3.3'
         //classpath 'com.hiya:jacoco-android:0.1'
         // Jacoco-android Wrapper : https://github.com/arturdm/jacoco-android-gradle-plugin
         //classpath 'com.dicedmelon.gradle:jacoco-android:0.1.4'
@@ -35,6 +35,7 @@ edx {
 apply plugin: 'newrelic'
 //apply plugin: 'com.facebook.testing.screenshot'
 apply from: file('gradle_scripts/AndroidHelper.gradle')
+apply plugin: 'com.google.gms.google-services'
 
 /*jacoco {
     toolVersion = "0.8.4"
@@ -114,14 +115,14 @@ task(version) doLast {
 dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
 
-    implementation project (':android-iconify')
+    implementation project(':android-iconify')
     // Note that we have the Font Awesome TTF file
     // in the local assets as well, to enable the
     // graphical layout editor to render it. Since
     // that is what will be compiled in the APK now,
     // we need to ensure that it's updated along
     // with module updates.
-    implementation project (':android-iconify-fontawesome')
+    implementation project(':android-iconify-fontawesome')
 
     implementation "androidx.appcompat:appcompat:$androidXVersion"
     implementation "androidx.recyclerview:recyclerview:$androidXVersion"
@@ -133,11 +134,11 @@ dependencies {
     // NOTE: Always update the version of google-services and firebase libraries using the ones
     // provided in this link: https://developers.google.com/android/guides/releases
     implementation "com.google.android.gms:play-services-plus:16.0.0"
-    implementation "com.google.android.gms:play-services-analytics:16.0.8"
-    implementation "com.google.android.gms:play-services-auth:16.0.1"
+    implementation "com.google.android.gms:play-services-analytics:17.0.0"
+    implementation "com.google.android.gms:play-services-auth:17.0.0"
     // Google Firebase
-    implementation "com.google.firebase:firebase-core:16.0.9"
-    implementation ("com.google.firebase:firebase-messaging:20.2.0") {
+    implementation "com.google.firebase:firebase-core:17.0.0"
+    implementation("com.google.firebase:firebase-messaging:20.2.0") {
         // This exclusion has been added due to a conflict between this library and Roboguice
         // (which has already added the javax.inject group) causing the following error during
         // compile time: Error: Program type already present: javax.inject.Inject
@@ -184,10 +185,10 @@ dependencies {
      * latest version as a result of dynamic version
      * definitions in the transitive dependencies.
      */
-    implementation ('com.squareup.retrofit2:retrofit:2.8.1') {
+    implementation('com.squareup.retrofit2:retrofit:2.8.1') {
         exclude group: 'com.squareup.okhttp3', module: 'okhttp'
     }
-    implementation ('com.squareup.retrofit2:converter-gson:2.8.1') {
+    implementation('com.squareup.retrofit2:converter-gson:2.8.1') {
         exclude group: 'com.squareup.okhttp3', module: 'okhttp'
         exclude group: 'com.google.code.gson', module: 'gson'
     }
@@ -197,7 +198,7 @@ dependencies {
     implementation 'io.github.inflationx:calligraphy3:3.1.1'
     implementation 'io.github.inflationx:viewpump:2.0.3'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
-    implementation ('com.github.bumptech.glide:okhttp3-integration:4.11.0')
+    implementation('com.github.bumptech.glide:okhttp3-integration:4.11.0')
 
     // Segment Library
     implementation 'com.segment.analytics.android:analytics:4.2.6'
@@ -210,18 +211,18 @@ dependencies {
     }
 
     // Firebase Crashlytics SDK
-    implementation ('com.google.firebase:firebase-crashlytics:17.0.0'){
+    implementation('com.google.firebase:firebase-crashlytics:17.0.0') {
         exclude group: 'javax.inject'
         transitive = true
     }
 
     // Recommended: Add the Google Analytics SDK along Firebase Crashlytics SDK
-    implementation 'com.google.firebase:firebase-analytics:17.4.2'
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
 
     // Branch SDK
     // Check this link for guide to updating Branch integration:
     // https://github.com/BranchMetrics/android-branch-deep-linking
-    implementation ('io.branch.sdk.android:library:2.19.2') {
+    implementation('io.branch.sdk.android:library:2.19.2') {
         exclude module: 'answers-shim'
     }
 
@@ -236,7 +237,7 @@ dependencies {
 
     // test project configuration
     testImplementation 'junit:junit:4.12'
-    testImplementation ("org.mockito:mockito-core:2.19.0"){
+    testImplementation("org.mockito:mockito-core:2.19.0") {
         exclude group: 'org.hamcrest'
     }
     testImplementation "org.robolectric:robolectric:4.3.1"
@@ -249,17 +250,17 @@ dependencies {
      * Instead of AssertJ we should move towards Truth library that they recommend instead.
      * Ref: https://truth.dev/comparison.html
      */
-    testImplementation ('com.squareup.assertj:assertj-android:1.1.1') {
+    testImplementation('com.squareup.assertj:assertj-android:1.1.1') {
         exclude group: 'com.android.support'
     }
-    testImplementation ('com.squareup.assertj:assertj-android-support-v4:1.1.1') {
+    testImplementation('com.squareup.assertj:assertj-android-support-v4:1.1.1') {
         exclude group: 'com.android.support'
     }
-    testImplementation ('com.squareup.assertj:assertj-android-appcompat-v7:1.1.1') {
+    testImplementation('com.squareup.assertj:assertj-android-appcompat-v7:1.1.1') {
         exclude group: 'com.android.support'
     }
     testImplementation 'com.squareup.okhttp3:mockwebserver:3.12.8'
-    testImplementation ('com.squareup.retrofit2:retrofit-mock:2.8.1') {
+    testImplementation('com.squareup.retrofit2:retrofit-mock:2.8.1') {
         exclude group: 'com.squareup.okhttp3', module: 'okhttp'
     }
 
@@ -269,7 +270,7 @@ dependencies {
     androidTestImplementation 'org.hamcrest:hamcrest-library:1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     androidTestImplementation 'com.linkedin.dexmaker:dexmaker-mockito:2.12.1'
-    androidTestImplementation ('org.mockito:mockito-core:2.8.9'){
+    androidTestImplementation('org.mockito:mockito-core:2.8.9') {
         exclude group: 'org.hamcrest'
     }
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${KOTLIN_VERSION}"
@@ -283,7 +284,7 @@ configurations {
 def config = new TaskHelper().loadConfig(project)
 def firebaseConfig = config.get('FIREBASE')
 def firebaseEnabled = firebaseConfig?.get('ENABLED')
-if (firebaseEnabled ?: false) {
+if (firebaseEnabled ?: true) {
     apply plugin: 'com.google.gms.google-services'
     /*
      * Getting some libraries conflict after adding the microsoft client library for microsoft SSO
@@ -392,7 +393,7 @@ android {
             if (null == facebookAppId) {
                 throw new GradleException("You must set FACEBOOK_APP_ID if FACEBOOK is enabled")
             }
-            fbLoginProtocolScheme = "fb"+facebookAppId
+            fbLoginProtocolScheme = "fb" + facebookAppId
         }
 
         manifestPlaceholders = [supportsRtl          : "false",
@@ -415,15 +416,15 @@ android {
 //       jacocoAndroidUnitTestReport {
 //            excludes += ['**/R.class',
 //                         '**/R$*.class',
- //                        '**/*$ViewInjector*.*',
-  //                       '**/BuildConfig.*',
-  //                       '**/Manifest*.*',
-   //                      'android/databinding/**',
-    //                     'com/android/databinding/**',
-    //                     '**/androidx/databinding/**',
-    //                     '**/AnnotationDatabaseImpl.class' // Generated by RoboBlender
-    //        ]
-    //    }
+        //                        '**/*$ViewInjector*.*',
+        //                       '**/BuildConfig.*',
+        //                       '**/Manifest*.*',
+        //                      'android/databinding/**',
+        //                     'com/android/databinding/**',
+        //                     '**/androidx/databinding/**',
+        //                     '**/AnnotationDatabaseImpl.class' // Generated by RoboBlender
+        //        ]
+        //    }
     }
     sourceSets {
         main {
@@ -482,12 +483,14 @@ android {
     buildTypes {
         debug {
             testCoverageEnabled true
-            pseudoLocalesEnabled true // Set device language to "en_XA" to test glyphs, or "ar_XB" to test RTL support
-            manifestPlaceholders = [ supportsRtl:"true"]
+            pseudoLocalesEnabled true
+            // Set device language to "en_XA" to test glyphs, or "ar_XB" to test RTL support
+            manifestPlaceholders = [supportsRtl: "true"]
         }
         debuggable.initWith(buildTypes.debug)
         debuggable {
-            testCoverageEnabled = false // Set to "false" to work around debugger issue: https://code.google.com/p/android/issues/detail?id=123771
+            testCoverageEnabled = false
+            // Set to "false" to work around debugger issue: https://code.google.com/p/android/issues/detail?id=123771
             matchingFallbacks = ["debug"]
         }
 
@@ -498,8 +501,8 @@ android {
             }
             applicationVariants.all { variant ->
                 variant.outputs.all { output ->
-                    project.ext { appName = 'edx' }
-                    outputFileName  = "${project.ext.appName}-${variant.buildType.name}-${versionName}.apk"
+                    project.ext { appName = 'BNMIT' }
+                    outputFileName = "${project.ext.appName}-${variant.buildType.name}-${versionName}.apk"
                 }
             }
         }
@@ -515,9 +518,9 @@ android {
         exclude 'META-INF/NOTICE.txt'
     }
     testOptions {
-         unitTests.all {
-             maxHeapSize '1g'
-         }
+        unitTests.all {
+            maxHeapSize '1g'
+        }
     }
 
     compileOptions {
