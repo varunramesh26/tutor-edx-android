@@ -11,10 +11,10 @@
       "type": "SINGLE",
       "filters": [],
       "properties": [],
-      "versionCode": 2022000,
-      "versionName": "2022000",
+      "versionCode": 2022001,
+      "versionName": "2022001",
       "enabled": true,
-      "outputFile": "edx-release-2.22.0.apk"
+      "outputFile": "BNMIT-release-2.22.1.apk"
     }
   ]
 }
