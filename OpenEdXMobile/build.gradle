@@ -15,7 +15,7 @@ buildscript {
         classpath "com.newrelic.agent.android:agent-gradle-plugin:5.4.1"
         //Screenshot testing library
         classpath 'com.facebook.testing.screenshot:plugin:0.11.0'
-        classpath 'com.google.gms:google-services:4.2.0'
+        classpath 'com.google.gms:google-services:4.3.3'
         // Jacoco-android Wrapper : https://github.com/arturdm/jacoco-android-gradle-plugin
         classpath 'com.dicedmelon.gradle:jacoco-android:0.1.4'
     }
@@ -280,7 +280,7 @@ configurations {
 def config = new TaskHelper().loadConfig(project)
 def firebaseConfig = config.get('FIREBASE')
 def firebaseEnabled = firebaseConfig?.get('ENABLED')
-if (firebaseEnabled ?: false) {
+if (firebaseEnabled ?: true) {
     apply plugin: 'com.google.gms.google-services'
     /*
      * Getting some libraries conflict after adding the microsoft client library for microsoft SSO
