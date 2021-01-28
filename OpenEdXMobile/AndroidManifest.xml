@@ -335,7 +335,7 @@
 
         <!-- Setup Firebase -->
         <meta-data android:name="firebase_analytics_collection_enabled"
-            android:value="false" />
+            android:value="true" />
             <!--    android:value="${firebaseEnabled}" /> -->
 
         <!-- Branch -->
@@ -380,7 +380,7 @@
             android:resource="@color/edx_brand_primary_accent" />
         <meta-data
             android:name="firebase_performance_logcat_enabled"
-            android:value="false" />
+            android:value="true" />
 
         <!--Google cast options provider -->
         <meta-data
