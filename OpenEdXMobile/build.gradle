@@ -203,7 +203,7 @@ dependencies {
     // Segment's GA integration
     implementation('com.segment.analytics.android.integrations:google-analytics:1.0.0') {
         exclude module: 'play-services-analytics'
-        transitive = true
+        transitive = false 
     }
 
     // Firebase Crashlytics SDK

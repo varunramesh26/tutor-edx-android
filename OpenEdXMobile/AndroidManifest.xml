@@ -361,7 +361,8 @@
 
         <!-- Notifications through Firebase Cloud Messaging (FCM) -->
         <meta-data android:name="firebase_messaging_auto_init_enabled"
-            android:value="${fcmEnabled}" />
+            android:value="false" />
+            <!-- android:value="${fcmEnabled}" />  ->
         <service
             android:name="org.edx.mobile.notifications.services.NotificationService"
             android:enabled="${fcmEnabled}">
